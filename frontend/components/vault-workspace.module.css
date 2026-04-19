@@ -1,0 +1,478 @@
+.shell {
+  width: min(1320px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  background:
+    linear-gradient(135deg, rgba(15, 18, 18, 0.98), rgba(18, 24, 23, 0.86)),
+    radial-gradient(circle at top right, rgba(115, 240, 191, 0.18), transparent 18rem);
+  box-shadow: var(--shadow);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -8rem -7rem auto;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 212, 121, 0.22), transparent 70%);
+  pointer-events: none;
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+  max-width: 52rem;
+}
+
+.heroCopy h1,
+.panelHeader h2 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.heroCopy p {
+  margin: 0;
+  max-width: 46rem;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.eyebrow,
+.panelLabel {
+  margin: 0;
+  font-family: var(--font-mono), monospace;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.75rem;
+}
+
+.heroBadges {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.heroBadges span,
+.roleBadge,
+.statBadge,
+.tag,
+.auditTarget {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(115, 240, 191, 0.25);
+  border-radius: 999px;
+  background: rgba(115, 240, 191, 0.08);
+  color: #d7fff0;
+  font-size: 0.84rem;
+}
+
+.topGrid,
+.workspaceGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.topGrid {
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.workspaceGrid {
+  grid-template-columns: 0.92fr 1.08fr 1fr;
+}
+
+.panel {
+  display: grid;
+  gap: 1.25rem;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-strong));
+  box-shadow: var(--shadow);
+  min-width: 0;
+}
+
+.panelHeader,
+.detailHeader,
+.metricRow,
+.metaRow,
+.actionRow,
+.detailMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.panelHeader h2 {
+  font-size: 1.55rem;
+}
+
+.panelHeader div,
+.detailHeader div {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.roleBadge[data-role="admin"] {
+  border-color: rgba(255, 212, 121, 0.28);
+  background: rgba(255, 212, 121, 0.11);
+  color: #ffe4a7;
+}
+
+.statBadge {
+  min-width: 2.2rem;
+}
+
+.sessionCard,
+.architectureGrid,
+.form,
+.list,
+.auditList {
+  display: grid;
+  gap: 1rem;
+}
+
+.metricRow div,
+.archCard,
+.detailCard,
+.auditItem,
+.listItem,
+.emptyState {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(7, 10, 10, 0.34);
+}
+
+.metricRow div {
+  flex: 1;
+  display: grid;
+  gap: 0.3rem;
+  padding: 1rem;
+}
+
+.metricRow span,
+.archCard span,
+.metaRow,
+.detailMeta,
+.searchField span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.metricRow strong {
+  font-size: 1.9rem;
+}
+
+.supportingText {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.modeSwitch {
+  display: inline-flex;
+  gap: 0.35rem;
+  padding: 0.3rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.modeButton,
+.modeActive,
+.primaryButton,
+.secondaryButton,
+.dangerButton,
+.ghostButton {
+  border: 0;
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.modeButton,
+.modeActive,
+.ghostButton {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+}
+
+.modeActive {
+  background: rgba(115, 240, 191, 0.14);
+  color: var(--text);
+}
+
+.form {
+  gap: 0.9rem;
+}
+
+.field,
+.searchField {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.field input,
+.field textarea,
+.searchField input {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(132, 150, 143, 0.22);
+  border-radius: 18px;
+  background: rgba(6, 9, 9, 0.55);
+  color: var(--text);
+  outline: none;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.searchField input:focus {
+  border-color: rgba(115, 240, 191, 0.55);
+  box-shadow: 0 0 0 4px rgba(115, 240, 191, 0.08);
+}
+
+.splitFields {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.primaryButton,
+.secondaryButton,
+.dangerButton {
+  min-height: 2.85rem;
+  padding: 0.8rem 1.1rem;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, var(--accent-strong), var(--accent));
+  color: #082016;
+}
+
+.secondaryButton {
+  border: 1px solid rgba(115, 240, 191, 0.22);
+  background: rgba(115, 240, 191, 0.08);
+  color: var(--text);
+}
+
+.dangerButton {
+  border: 1px solid rgba(255, 133, 119, 0.18);
+  background: rgba(255, 133, 119, 0.09);
+  color: #ffc4bb;
+}
+
+.ghostButton {
+  border: 1px solid rgba(132, 150, 143, 0.22);
+}
+
+.primaryButton:hover,
+.secondaryButton:hover,
+.dangerButton:hover,
+.ghostButton:hover,
+.modeButton:hover,
+.modeActive:hover {
+  transform: translateY(-1px);
+}
+
+.architectureGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.archCard,
+.detailCard,
+.auditItem,
+.listItem,
+.emptyState {
+  padding: 1rem;
+}
+
+.archCard {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.archCard strong,
+.listItem strong,
+.detailCard strong,
+.auditItem strong {
+  font-size: 1rem;
+}
+
+.archCard p,
+.listItem p,
+.detailCard p,
+.auditItem p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.searchField {
+  gap: 0.5rem;
+}
+
+.list {
+  max-height: 38rem;
+  overflow: auto;
+}
+
+.listItem {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.metaRow,
+.detailMeta {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.tagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+}
+
+.actionRow {
+  justify-content: flex-start;
+}
+
+.detailCard {
+  gap: 1rem;
+}
+
+.detailHeader {
+  align-items: flex-start;
+}
+
+.secretValue {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.35);
+  color: #d8ffef;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.auditList {
+  max-height: 26rem;
+  overflow: auto;
+}
+
+.auditItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.auditTarget {
+  text-transform: capitalize;
+}
+
+.emptyState {
+  color: var(--muted);
+  min-height: 8rem;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.alertError,
+.alertNotice {
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  border: 1px solid;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.92rem;
+}
+
+.alertError {
+  border-color: rgba(255, 133, 119, 0.28);
+  background: rgba(255, 133, 119, 0.1);
+  color: #ffd3cd;
+}
+
+.alertNotice {
+  border-color: rgba(115, 240, 191, 0.24);
+  background: rgba(115, 240, 191, 0.1);
+  color: #d7fff0;
+}
+
+@media (max-width: 1120px) {
+  .topGrid,
+  .workspaceGrid,
+  .architectureGrid,
+  .splitFields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: min(100% - 1rem, 1320px);
+    padding-top: 1rem;
+  }
+
+  .hero,
+  .panel {
+    padding: 1.1rem;
+    border-radius: 24px;
+  }
+
+  .panelHeader,
+  .detailHeader,
+  .metricRow,
+  .actionRow,
+  .auditItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heroCopy h1,
+  .panelHeader h2 {
+    font-size: 1.75rem;
+  }
+}
